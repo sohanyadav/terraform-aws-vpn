@@ -21,7 +21,7 @@ To use this module, you should have Terraform installed and configured for AWS. 
 ```hcl
 # Create EC2 instances
 module "vpn" {
-  source                                    = "git::https://github.com/opsstation/terraform-aws-vpn.git?ref=v1.0.0"
+  source                                    = "git::https://github.com/sohanyadav/terraform-aws-vpn.git?ref=v1.0.0"
   name                                      = local.name
   environment                               = local.environment
   vpc_id                                    = module.vpc.vpc_id
@@ -36,14 +36,14 @@ module "vpn" {
 
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-aws-vpn/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/sohanyadav/terraform-aws-vpn/tree/master/_example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-aws-vpn/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/sohanyadav/terraform-aws-vpn/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **sohanyadav** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -63,7 +63,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/sohanyadav/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -79,18 +79,18 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+|------|-------------|------|-----|:--------:|
 | <a name="input_bgp_asn"></a> [bgp\_asn](#input\_bgp\_asn) | The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). | `number` | `65000` | no |
 | <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | certificate\_arn (e.g. ''). | `string` | `""` | no |
 | <a name="input_create_virtual_private_gateway"></a> [create\_virtual\_private\_gateway](#input\_create\_virtual\_private\_gateway) | Set this to false to use existing Virtual Private Gateway(vgw) and prevent creation of vgw | `bool` | `true` | no |
 | <a name="input_customer_ip_address"></a> [customer\_ip\_address](#input\_customer\_ip\_address) | The IP of the Customer Gateway. | `string` | n/a | yes |
 | <a name="input_enable_vpn_connection"></a> [enable\_vpn\_connection](#input\_enable\_vpn\_connection) | Set to false to prevent the creation of a VPN Connection. | `bool` | `true` | no |
 | <a name="input_enable_vpn_gateway_attachment"></a> [enable\_vpn\_gateway\_attachment](#input\_enable\_vpn\_gateway\_attachment) | Set to false to prevent attachment of the vGW to the VPC. | `bool` | `true` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""`| no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "environment",<br>  "name"<br>]</pre> | no |
 | <a name="input_local_ipv4_network_cidr"></a> [local\_ipv4\_network\_cidr](#input\_local\_ipv4\_network\_cidr) | n/a | `string` | `"0.0.0.0/0"` | no |
 | <a name="input_local_ipv6_network_cidr"></a> [local\_ipv6\_network\_cidr](#input\_local\_ipv6\_network\_cidr) | (Optional) The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection. | `string` | `null` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation' or 'opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'sohanyadav' or 'sohanyadav'. | `string` | `"example"`| no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_remote_ipv4_network_cidr"></a> [remote\_ipv4\_network\_cidr](#input\_remote\_ipv4\_network\_cidr) | n/a | `string` | `"0.0.0.0/0"` | no |
 | <a name="input_remote_ipv6_network_cidr"></a> [remote\_ipv6\_network\_cidr](#input\_remote\_ipv6\_network\_cidr) | (Optional) The IPv6 CIDR on AWS side of the VPN connection. | `string` | `null` | no |

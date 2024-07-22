@@ -36,8 +36,8 @@ variable "label_order" {
 
 variable "managedby" {
   type        = string
-  default     = "opsstation"
-  description = "ManagedBy, eg 'opsstation' or 'opsstation'."
+  default     = "example"
+  description = "ManagedBy, eg 'sohanyadav' or 'sohanyadav'."
 }
 
 ###########################################################################################################################################
